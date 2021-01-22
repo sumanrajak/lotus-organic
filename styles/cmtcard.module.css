@@ -1,0 +1,108 @@
+.card{
+    font-family: myriad pro;
+    padding: 50px 20px;
+    text-align: center;
+    margin: 10px 5px;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    background: #fff;
+    height: 400px;
+    text-transform: capitalize;
+}
+.card::before {
+    content: '';
+    background: url(../public/images/quotes.png) no-repeat;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 28px;
+    height: 20px;
+}
+.card::after {
+    content: '';
+    background: url(../public/images/quotes.png) no-repeat;
+    position: absolute;
+    bottom: 1%;
+    right: 5%;
+    width: 28px;
+    height: 20px;
+}
+.cardinf{
+    font-family: myriad pro;
+    margin: 15px 0;
+
+
+}
+.cardimg{
+    width: 120px;
+    border-radius: 50%;
+    height: 120px;
+    border: 2px solid #eef1df;
+    margin-left: 35%;
+
+}
+.uperft{
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    padding: 10px 50px;
+    line-height: 32px;
+
+
+}
+@media only screen and (max-width: 768px) {
+
+    .container{
+        flex-wrap:   wrap;
+    }
+    .uperftl{
+        font-size: 6px;
+        text-transform: capitalize;
+        color: #4f4f4f;
+        line-height: 2px;
+        margin-left: 1px;
+        margin-right: 5px;
+        text-transform: capitalize;
+    }
+    .uperft{
+        padding: 1px 5px;
+ 
+    }
+    .uperftl{
+        margin-left: 1px;
+    margin-right: 50px;
+    }
+
+}
+
+.uperftl{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #4f4f4f;
+    line-height: 12px;
+    margin-left: 1px;
+    margin-right: 65px;
+    text-transform: capitalize;
+}
+.footer{
+    display: flex;
+   
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+    align-items: center;
+    background-color: #cde0b2;
+    padding: 5px 10px;
+}
+.midft{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #4f4f4f;
+    line-height: 12px;
+    margin-left: 32px;
+    margin-right: 65px;
+    text-transform: capitalize;
+    padding: 10px;
+    margin-bottom: 50px;
+}

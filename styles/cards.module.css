@@ -1,0 +1,151 @@
+.products{
+    padding:15px 60px 15px;
+    /* marginBbottom: "100px", */
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.cardbody{
+    margin: 1rem;
+    width: calc(21% - 7px);
+    align-items: center;
+    text-align: center;
+    height: auto;
+}
+.cardbody:hover{
+    background-color:  #f7f7f7;
+    ;
+
+}
+.cardimg{
+    height:'28rem' ; object-fit : 'cover' ;padding: '2px' ;width:"auto";
+}
+.cardinfo{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-family: barkentina;
+    margin-bottom: 10px;
+}
+.name{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-family: barkentina;
+    margin-bottom: 10px;
+
+}
+.cardprice{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    font-family: humanist521bt-roman;
+    font-size: 17px;
+    margin-top: auto;
+}
+.button{
+    background-color: #345e2e;
+    font-family: myriad pro;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    padding: 11px 20px 8px;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.cardbutton{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.old{
+    text-decoration: line-through;
+    margin-right: 15px;
+    color: #c87a70;
+    font-size: 15px;
+    font-family: humanist521bt;
+}
+.new{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    font-family: humanist521bt;
+}
+.wishlist{
+   
+}
+.oldr{
+    
+    color: #c87a70;
+    font-size: 15px;
+    font-family: humanist521bt-roman;
+}
+.button:hover{
+background-color:lightgreen ;
+
+}
+.buttonV{
+    background-color: #fff;
+    text-transform: uppercase;
+    color: #7b1562;
+    padding: 11px 20px 8px;
+    
+}
+.buttonV:hover{
+    background-color:#7b1562 ;
+    color: #fff;
+    transition-duration: .5s;
+}
+@media only screen and (max-width: 768px) {
+    .products{
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+  
+    }
+    .cardbody{
+        width: 160px;
+        align-items: center;
+        text-align: center;
+        height: 450px;
+        margin: 6px;
+
+    }
+    .button{
+        background-color: #345e2e;
+        font-family: myriad pro;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 11px 20px 8px;
+        text-align: center;
+        font-size: 14px;
+
+        letter-spacing: .5px;
+        -webkit-transition-duration: .5s;
+        transition-duration: .5s;
+    }
+}
