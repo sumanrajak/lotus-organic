@@ -7,9 +7,26 @@
     
 }
 .side{
-    padding: 0px 100px 0px 50px;
-    width: 50%;
+    padding: 0px 0px 0px 40px;
+    width: 70%;
 
+
+}
+.slider{
+
+}
+.slideriner{
+    position: fixed;
+    width: 35%;
+    max-width: 450px;
+    
+}
+.slideriner2{
+    position: relative;
+    top:1300px;
+    width: 100%;
+    max-width: 450px;
+    
 }
 .cardprice2{
    
@@ -73,8 +90,9 @@
 }
 .button{
     background-color: #345e2e;
-    font-family: myriad pro;
+    font-family: myriad ;
     text-transform: uppercase;
+    width:100%;
     color: #fff;
     display: block;
     padding: 11px 20px 8px;
@@ -115,6 +133,9 @@
 
 
     }
+    .cardbutton{
+        width: 50%;
+    }
     li.offers_value_list {
         margin-bottom: 5px;
         color: black;
@@ -123,8 +144,10 @@
 
     }
     .slider{
-        height:700px;
-        width: 50%;
+        
+        width: 40%;
+        height: auto;
+        
 
     }
     .key_benifit{
@@ -144,7 +167,7 @@
         margin-top: 20px;
     }
     .product_cnt{
-        padding: 15px 60px;  
+        padding: 15px 10px;  
 
     }
     .head span{
@@ -160,6 +183,21 @@
     }
     .buttombar{
         display: none;
+    }
+    .buttonadd{
+        background-color: #ffffff;
+        font-family: myriad pro;
+        text-transform: uppercase;
+        width: 95%;
+        height: 100%;
+        color: #345e2e;
+        display: block;
+        border-color: #345e2e;
+        /* padding: 11px 0px 8px; */
+        text-align: center;
+        /* letter-spacing: .5px; */
+        -moz-transition-duration: .5s;
+        transition-duration: .5s;
     }
     @media (max-width: 800px) {
         .upper{
@@ -185,8 +223,8 @@
                 height: auto;
         }
         .product_cnt{
-            padding: 20px;
-            margin: 10px;  
+            padding: 0px;
+            margin: 0px;  
     
         }
         .container{
@@ -198,7 +236,7 @@
             position: fixed;
             z-index: 20;
             background-color: white;
-
+padding: 2px;
             bottom: 0;
             float: left;
             width: 100%;
@@ -206,6 +244,21 @@
         }
         .cardbutton2{
             width: 50%;
+        }
+        .buttonadd{
+            background-color: #ffffff;
+            font-family: myriad pro;
+            text-transform: uppercase;
+            width: 95%;
+            height: 100%;
+            color: #345e2e;
+            display: block;
+            border-color: #345e2e;
+            /* padding: 11px 0px 8px; */
+            text-align: center;
+            /* letter-spacing: .5px; */
+            -moz-transition-duration: .5s;
+            transition-duration: .5s;
         }
         .button{
             background-color: #345e2e;
@@ -230,5 +283,15 @@
         .cardbutton{
             display: none;
         }
- 
+        .slideriner{
+            position: relative;
+            width: auto;
+            
+        }
+        .slideriner2{
+            position: relative;
+            width: auto;
+            top:0px;
+            
+        }
     }

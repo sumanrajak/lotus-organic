@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Row from 'react-storefront/Row'
 import clsx from 'clsx'
+import style from "../styles/cart.module.css"
+import Image from 'next/image'
+
 import CartItem from '../components/cart/CartItem'
 import { createLazyProps, fetchFromAPI } from 'react-storefront/props'
 import { makeStyles } from '@material-ui/core/styles'
@@ -63,69 +66,145 @@ export default function Cart(props) {
     })
   }
 
-  return (
-    <Container className={classes.root}>
-      <Row>
-        <Typography variant="h6">
-          My Cart ({items.length} {items.length === 1 ? 'item' : 'items'})
-        </Typography>
-      </Row>
-      <Row>
-        <Grid container spacing={4}>
-          <Grid item xs={12} sm={8}>
-            {items.length ? (
-              items.map((product, i) => (
-                <CartItem
-                  key={product.id}
-                  updateQuantity={handleUpdateQuantity}
-                  remove={handleRemove}
-                  product={product}
-                />
-              ))
-            ) : (
-              <Typography variant="body1">There are no items in your cart.</Typography>
-            )}
-          </Grid>
-          {items.length === 0 ? null : (
-            <Grid item xs={12} sm={4}>
-              <div className={classes.checkoutPanel}>
-                <Hbox alignItems="flex-start">
-                  <div>
-                    <Typography variant="subtitle2" className={classes.total}>
-                      Estimated Total
-                    </Typography>
-                    <Typography variant="caption">Tax calculated in checkout</Typography>
-                  </div>
-                  <Spacer />
-                  <Typography variant="subtitle2" className={classes.total}>
-                    {price(
-                      items.reduce((a, b) => a + b.quantity * parseFloat(b.price), 0),
-                      { currency: get(session, 'currency') }
-                    )}
-                  </Typography>
-                </Hbox>
-                <Hidden xsDown implementation="css">
-                  <Row>
-                    <Divider />
-                  </Row>
-                </Hidden>
-                {items.length === 0 ? null : (
-                  <Link href="/checkout">
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      className={clsx(classes.checkoutButton, classes.docked)}
-                    >
-                      Checkout
-                    </Button>
-                  </Link>
-                )}
-              </div>
-            </Grid>
-          )}
-        </Grid>
-      </Row>
-    </Container>
+  return (<>
+  <div className={style.buttombar}>
+        <div className={style.cardbutton2}>
+               CONTINUE SHOPPING
+
+                </div>
+            <div className={style.cardbutton1}>
+                CHECKOUT
+
+                </div>
+
+        </div>
+    <div className={style.cartbody}>
+      
+      <div className={style.products}>
+        <CartItem/>
+        <CartItem/>
+
+
+
+      </div>
+      <div className={style.bill}>
+      <div className={style.billlevel}>
+<div>MRP</div>
+<div><span>2560</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Item Discount</div>
+<div>-  <span>423</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Net Price</div>
+<div> <span>2137</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Coupon discount </div>
+<div>-  <span>0</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Offer discount</div>
+<div>-<span>0</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Order total</div>
+<div><span>2137</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Delivery charges</div>
+<div><span>0</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Prepaid Discount</div>
+<div><span>106.85</span></div>
+</div>
+<div className={style.billlevel}>
+<div>Total</div>
+<div> <span>2030.15</span></div>
+</div>
+<div className={style.billlevel}>
+<div className={style.cardbutton}>
+                CHECKOUT
+
+                </div>
+</div>
+<div className={style.billlevel}>
+<div className={style.cardbutton}>
+                CONTINUE SHOPPING
+
+                </div>
+</div>
+
+                
+
+      </div>
+      
+    </div>
+    </>
+    // <Container className={classes.root}>
+    //   <Row>
+    //     <Typography variant="h6">
+    //       My Cart ({items.length} {items.length === 1 ? 'item' : 'items'})
+    //     </Typography>
+    //   </Row>
+    //   <Row>
+    //     <Grid container spacing={4}>
+    //       <Grid item xs={12} sm={8}>
+    //         {items.length ? (
+    //           items.map((product, i) => (
+    //             <CartItem
+    //               key={product.id}
+    //               updateQuantity={handleUpdateQuantity}
+    //               remove={handleRemove}
+    //               product={product}
+    //             />
+    //           ))
+    //         ) : (
+    //           <Typography variant="body1">There are no items in your cart.</Typography>
+    //         )}
+    //       </Grid>
+    //       {items.length === 0 ? null : (
+    //         <Grid item xs={12} sm={4}>
+    //           <div className={classes.checkoutPanel}>
+    //             <Hbox alignItems="flex-start">
+    //               <div>
+    //                 <Typography variant="subtitle2" className={classes.total}>
+    //                   Estimated Total
+    //                 </Typography>
+    //                 <Typography variant="caption">Tax calculated in checkout</Typography>
+    //               </div>
+    //               <Spacer />
+    //               <Typography variant="subtitle2" className={classes.total}>
+    //                 {price(
+    //                   items.reduce((a, b) => a + b.quantity * parseFloat(b.price), 0),
+    //                   { currency: get(session, 'currency') }
+    //                 )}
+    //               </Typography>
+    //             </Hbox>
+    //             <Hidden xsDown implementation="css">
+    //               <Row>
+    //                 <Divider />
+    //               </Row>
+    //             </Hidden>
+    //             {items.length === 0 ? null : (
+    //               <Link href="/checkout">
+    //                 <Button
+    //                   color="primary"
+    //                   variant="contained"
+    //                   className={clsx(classes.checkoutButton, classes.docked)}
+    //                 >
+    //                   Checkout
+    //                 </Button>
+    //               </Link>
+    //             )}
+    //           </div>
+    //         </Grid>
+    //       )}
+    //     </Grid>
+    //   </Row>
+    // </Container>
   )
 }
 

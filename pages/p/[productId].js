@@ -1,8 +1,14 @@
 import React, { useContext, useState, useEffect, useRef } from 'react'
 import clsx from 'clsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import qs from 'qs'
+import style from "../../styles/product.module.css"
 import useLazyState from 'react-storefront/hooks/useLazyState'
 import Breadcrumbs from 'react-storefront/Breadcrumbs'
+import Carousel from 'react-bootstrap/Carousel'
+import Image from 'next/image'
+
 import CmsSlot from 'react-storefront/CmsSlot'
 import MediaCarousel from 'react-storefront/carousel/MediaCarousel'
 import PWAContext from 'react-storefront/PWAContext'
@@ -83,6 +89,9 @@ const styles = theme => ({
 
 const useStyles = makeStyles(styles)
 
+
+
+
 const Product = React.memo(lazyProps => {
   const theme = useTheme()
   const [confirmationOpen, setConfirmationOpen] = useState(false)
@@ -90,6 +99,29 @@ const Product = React.memo(lazyProps => {
   const [state, updateState] = useLazyState(lazyProps, {
     pageData: { quantity: 1, carousel: { index: 0 } },
   })
+  const scrollupdate=()=>{
+    console.log(window.scrollY)
+    
+   };
+const [scrolll, setscrolll] = useState('false')
+
+  useEffect(() => {
+    const scrollupdate2=()=>{
+     
+      if(window.scrollY<=1319){
+        setscrolll(true);
+        console.log(scrolll)
+      }else{
+        setscrolll(false);
+        console.log(scrolll)
+      }
+     };
+  
+    window.addEventListener('scroll', scrollupdate2);
+  }, )
+   
+   
+
   const classes = useStyles()
   const product = get(state, 'pageData.product') || {}
   const color = get(state, 'pageData.color') || {}
@@ -153,9 +185,165 @@ const Product = React.memo(lazyProps => {
   return (
     <>
       <Breadcrumbs items={!loading && state.pageData.breadcrumbs} />
-      <Container maxWidth="lg" style={{ paddingTop: theme.spacing(2) }}>
+      <div >
         <form onSubmit={handleSubmit} method="post" action-xhr="/api/cart">
-          <Grid container spacing={4}>
+        <div className={style.buttombar}>
+        <div className={style.cardbutton2}>
+                <button className={style.buttonadd}>ADD TO CART</button>
+
+                </div>
+            <div className={style.cardbutton2}>
+                <button className={style.button}>BUY NOW</button>
+
+                </div>
+
+        </div>
+        <div className={style.container}>
+            <div className={style.upper}>
+            <div  className={style.slider} >
+            <div className={scrolll?style.slideriner:style.slideriner2}>
+            <Carousel style={{}}>
+  <Carousel.Item interval={800}>
+  <Image src="/images/mobslid.png" width="450px" height="450px"/>
+    <Carousel.Caption>
+      
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item interval={800}>
+  <Image src="/images/mobslid2.png" width="450px" height="450px"/>
+    <Carousel.Caption>
+      
+    </Carousel.Caption>
+  </Carousel.Item>
+   <Carousel.Item interval={800}>
+   <Image src="/images/mobslid3.png"  width="450px" height="450px"/>
+    <Carousel.Caption>
+      
+    </Carousel.Caption>
+  </Carousel.Item> 
+</Carousel>
+<div className="" style={{ display:"flex", justifyContent:"space-between"}}>
+<div className={style.cardbutton}>
+                <button className={style.buttonadd} onClick={scrollupdate}>ADD TO CART</button>
+
+                </div><div className={style.cardbutton}>
+                <button className={style.button}>BUY NOW</button>
+
+                </div>
+        </div>
+        </div>
+        </div>
+        
+            <div className={style.side}>
+                <div className="">
+                {product ? product.name : <Skeleton style={{ height: '1em' }} />}
+                </div>
+                <div className="">
+                <Rating value={product.rating} reviewCount={10} />
+                </div>
+                <div className="">
+                {product.description}
+                <br></br>
+                {product.specs}
+                </div>
+                <div className={style.cardprice}>
+            <h4 className={style.oldr}> ₹</h4><h4 className={style.old}>{product.priceText}</h4>
+            <h4 className={style.new}>₹{product.priceText}</h4>
+            </div>
+            <div class={style.offers_strip}>Offers Available
+        <div class={style.offers_value}>
+        <ul class={style.offers_value_table}>
+        <li class={style.offers_value_list}>Get 8% EXTRA Discount on prepaid orders</li>
+        <li class={style.offers_value_list}>Get Complimentary Divine Soothing Hand Creme on Purchase Value of more than Rs 2000</li>
+        </ul>
+        </div>
+        </div>
+        <div className={style.product_cnt}>
+        <div className={style.head}>
+          <span>KEY BENIFITS</span>
+        </div>
+        <div className={style.key_benifit}>
+
+          <div className={style.card}>
+          <Image src="/images/face.png"width="310px" height="300px"/>
+
+            <strong>Exfoliate dead skin cells</strong><br></br>
+            This unique formulation removes dead skin cells and draws out deep rooted impurities , 
+            thereby unclogging pores and revealing a cleaner and smoother skin.
+
+
+          </div>
+          <div className={style.card}>
+            
+          <Image src="/images/face.png"width="310px" height="300px"/>
+
+          <strong>Nourishing and Moisturising in Nature</strong><br></br>
+          The potent ingredients of this mask deeply penetrate the skin to ensure moisture is
+          retained for longer periods of time, thus nourishing and reviving it.
+                    </div>
+          <div className={style.card}>
+          <Image src="/images/face.png"width="300px" height="300px"/>
+
+            <strong>Promotes Blood circulation</strong><br></br>
+            Massaging and gently removing of this mask from the face leads to the expansion of the face blood vessels and thus stimulating blood circulation
+                      </div>
+        
+
+
+
+
+        </div>
+        <div className={style.head}>
+          <span>KEY INGREDIENTS</span>
+        </div>
+        <div className={style.key_benifit}>
+          <div className="">
+          <Image src="/images/face.png"width="310px" height="300px"/>
+          <br></br>
+            <strong>Exfoliate dead skin cells</strong><br></br>
+            This unique formulation removes dead skin cells and draws out deep rooted impurities , 
+            thereby unclogging pores and revealing a cleaner and smoother skin.
+
+
+          </div></div>
+          <div className={style.head}>
+          <span>HOW TO USE</span>
+        </div>
+        <div className={style.key_benifit}>
+          <div className={style.card}>
+          <Image src="/images/face.png"width="300px" height="300px"/>
+
+            <strong>Step 1</strong><br></br>
+            Cleanse your face using Divine Nourish Facewash
+
+
+          </div>
+          <div className={style.card}>
+            
+          <Image src="/images/face.png"width="300px" height="300px"/>
+
+          <strong>Step 2</strong><br></br>
+          Apply a thick layer of Blissful Perfecting Mask smoothly over face, avoiding the eye and lip areas.
+                    </div>
+          <div className={style.card}>
+          <Image src="/images/face.png"width="300px" height="300px"/>
+
+            <strong>Step 3</strong><br></br>
+            Wash with lukewarm water after 10-15 minutes for a healthy, glowing and flawless skin.                      </div>
+        
+
+
+
+
+        </div></div>  
+                
+            </div>
+
+            </div>
+            
+        </div>
+        
+          {/* <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={5}>
               <Hidden implementation="css" smUp>
                 {header}
@@ -260,20 +448,20 @@ const Product = React.memo(lazyProps => {
                 </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={12}>
+          </Grid> */}
+          {/* <Grid item xs={12}>
             <TabPanel>
               <CmsSlot label="Description">{product.description}</CmsSlot>
               <CmsSlot label="Specs">{product.specs}</CmsSlot>
             </TabPanel>
-          </Grid>
+          </Grid> */}
           <Grid item xs={12}>
             <Lazy style={{ minHeight: 285 }}>
               <SuggestedProducts product={product} />
             </Lazy>
           </Grid>
         </form>
-      </Container>
+      </div>
     </>
   )
 })

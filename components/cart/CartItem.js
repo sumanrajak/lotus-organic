@@ -9,6 +9,9 @@ import { Hbox } from 'react-storefront/Box'
 import Image from 'react-storefront/Image'
 import SessionContext from 'react-storefront/session/SessionContext'
 import RemoveDialog from './RemoveDialog'
+import style from "../../styles/cart.module.css";
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const styles = theme => ({
   root: {
@@ -36,12 +39,44 @@ const styles = theme => ({
 const useStyles = makeStyles(styles)
 
 export default function CartItem({ product, updateQuantity, remove }) {
-  const [open, setOpen] = useState(false)
+  const [qnt, setQnt] = useState(1)
   const classes = useStyles()
+  const incre=()=>{
+    setQnt(qnt+1)
+  }
+  const decre=()=>{
+    setQnt(qnt-1)
+  }
 
   return (
     <>
-      <Paper className={classes.root} elevation={3}>
+    <div className={style.cartproduct}>
+        <div className={style.cartuper}>
+        <div className={style.imagepro}>
+          <Image src="/images/categories.png" layout="responsive" />
+          </div>
+          <div className={style.proinfo}>
+            <h3>Lotus Organics+ Sheer Brightening Mineral Sunscreen SPF 50 PA+++ (100 GM)</h3>
+            <h5>345</h5>
+            <div className={style.quantity}><div className={style.decre} onClick={decre} >-</div><div className={style.decre}>{qnt}</div><div className={style.decre} onClick={incre}>+</div></div>
+          </div>
+        </div>
+        <div className={style.lower}>
+            <div className={style.lowerbox}>
+            <FavoriteBorderIcon/>
+              <div className=""> wishlist</div></div>
+            <div className={style.lowerbox}>
+            <DeleteIcon></DeleteIcon><div className="">remove</div> </div>
+
+        </div>
+
+
+          
+        </div>
+
+
+
+      {/* <Paper className={classes.root} elevation={3}>
         <Hbox alignItems="flex-start">
           <div className={classes.thumb}>
             <Image src={product.thumbnail.src} fill aspectRatio={1} quality={50} />
@@ -77,7 +112,7 @@ export default function CartItem({ product, updateQuantity, remove }) {
         setOpen={setOpen}
         name={product.name}
         action={() => remove(product)}
-      />
+      /> */}
     </>
   )
 }
