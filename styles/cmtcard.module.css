@@ -51,30 +51,6 @@
 
 
 }
-@media only screen and (max-width: 768px) {
-
-    .container{
-        flex-wrap:   wrap;
-    }
-    .uperftl{
-        font-size: 6px;
-        text-transform: capitalize;
-        color: #4f4f4f;
-        line-height: 2px;
-        margin-left: 1px;
-        margin-right: 5px;
-        text-transform: capitalize;
-    }
-    .uperft{
-        padding: 1px 5px;
- 
-    }
-    .uperftl{
-        margin-left: 1px;
-    margin-right: 50px;
-    }
-
-}
 
 .uperftl{
     font-size: 16px;
@@ -84,9 +60,12 @@
     margin-left: 1px;
     margin-right: 65px;
     text-transform: capitalize;
+    text-decoration: none;
+
 }
 .footer{
     display: flex;
+    margin-top: 5px;
    
     justify-content: space-between;
     flex-wrap: wrap;
@@ -94,8 +73,12 @@
     align-items: center;
     background-color: #cde0b2;
     padding: 5px 10px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+   
 }
-.midft{
+.midft a{
     font-size: 16px;
     text-transform: capitalize;
     color: #4f4f4f;
@@ -105,4 +88,53 @@
     text-transform: capitalize;
     padding: 10px;
     margin-bottom: 50px;
+    text-decoration: none;
+
+}
+.lowerft{
+display: flex;
+justify-content: space-between;
+width: 100%;
+margin-bottom: 10px;
+}
+.lrl{
+    text-decoration: none;
+
+}
+.midtl a {
+    text-decoration: none;
+    color: #4f4f4f;
+
+
+}
+@media only screen and (max-width: 768px) {
+
+    .container{
+        flex-wrap:   wrap;
+    }
+    .uperftl{
+        font-size: 13px;
+        text-transform: capitalize;
+        color: #4f4f4f;
+        line-height: 2px;
+        margin-left: 1px;
+        margin-right: 5px;
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+    .uperft{
+        padding: 1px 2px;
+ 
+    }
+    .uperftl{
+        margin-left: 1px;
+    margin-right: 10px;
+    }
+    .midft a{
+     font-size: 10px;
+        margin: 3px;
+        padding: 2px;
+    }
+
+
 }

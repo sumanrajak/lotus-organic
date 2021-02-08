@@ -1,3 +1,6 @@
+.container{
+min-height: 90vh;
+}
 .cartbody{
     display: flex;
     padding: 0px 60px;
@@ -82,6 +85,46 @@ justify-content: center;
 
     display: block;
     padding: 11px 20px 8px;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.head{
+    position: relative;
+    font-family: human;
+    font-size: 20px;
+    color: #43693c;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1px 0px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.buttonspace{
+    align-items: center;
+    TEXT-ALIGN: -webkit-center;
+
+}
+.cntbt{
+    width: 10rem;
+    background-color: #345e2e;
+justify-content: center;
+    text-transform: uppercase;
+    color: #fff;
+    align-items: center;
+
+    display: block;
+    padding: 7px 5px;
     text-align: center;
     letter-spacing: .5px;
     -webkit-transition-duration: .5s;

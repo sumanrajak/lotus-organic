@@ -6,6 +6,8 @@ import { CssBaseline } from '@material-ui/core'
 import { makeStyles, MuiThemeProvider } from '@material-ui/core/styles'
 import PWA from 'react-storefront/PWA'
 import NavBar from '../components/NavBar'
+import Footer from '../components/Home/Footer'
+
 import reportError from '../components/reportError'
 import useJssStyles from 'react-storefront/hooks/useJssStyles'
 import SessionProvider from 'react-storefront/session/SessionProvider'
@@ -14,6 +16,7 @@ import useAppStore from 'react-storefront/hooks/useAppStore'
 const styles = theme => ({
   main: {
     paddingTop: 3,
+    minHight:"100%"
   },
 })
 
@@ -38,9 +41,10 @@ export default function MyApp({ Component, pageProps }) {
           <CssBaseline />
           <Header menu={appData && appData.menu} />
           <NavBar tabs={appData && appData.tabs} />
-          <main className={classes.main}>
+          <main className={classes.main} style={{}}>
             <Component {...pageProps} />
           </main>
+          <Footer/>
         </MuiThemeProvider>
       </SessionProvider>
     </PWA>

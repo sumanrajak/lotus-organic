@@ -16,18 +16,26 @@ const Footer = () => {
 <a  className={style.uperftl}href="https://www.lotus-organics.com/page/privacy-policy" title="Privacy Policy">Privacy Policy</a>
 <a  className={style.uperftl} href="https://www.lotus-organics.com/page/terms-conditions" title="Terms &amp; Conditions">Terms &amp; Conditions</a>
             </div>
+            <div className={style.lowerft}>
             <div className={style.midft} >
-                
-                <a href="tel:1800-1200-6231" title="1800-1200-6231" className={style.uperftl}> <PhoneIcon/>+91-9311262211</a>
-                <a href="mailto:care@lotus-organics.com" className={style.uperftl} title="care@lotus-organics.com" >
+                <div className="">
+                <a href="tel:1800-1200-6231" title="1800-1200-6231" className={style.midtl}> <PhoneIcon/>+91-9311262211</a>
+
+                </div>
+                <div className="">
+                <a href="mailto:care@lotus-organics.com" className={style.midftl} title="care@lotus-organics.com" >
                 <MailIcon/> care@lotus-organics.com</a>
+                </div>
+               
                 
 
             </div>
-            <div className={style.midft}>
-            <a href="https://www.instagram.com/lotus_organicsplus/" class="instatext" className={style.uperftl}> Follow us on <InstagramIcon/> </a>
+            <div className={style.btmft}>
+            <a href="https://www.instagram.com/lotus_organicsplus/"  className={style.lrl}> Follow us on <InstagramIcon/> </a>
                 
             </div>
+            </div>
+            
         </div>
     )
 }

@@ -79,6 +79,8 @@ export default function Cart(props) {
 
         </div>
     <div className={style.cartbody}>
+    <div className={style.head}> cart</div>
+
       
       <div className={style.products}>
         <CartItem/>
