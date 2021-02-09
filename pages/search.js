@@ -1,4 +1,4 @@
-import Subcategory from './s/[subcategoryId]'
+import Subcategory from './s/[catagorySlug]'
 import fetchFromAPI from 'react-storefront/props/fetchFromAPI'
 import createLazyProps from 'react-storefront/props/createLazyProps'
 

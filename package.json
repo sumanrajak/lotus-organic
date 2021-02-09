@@ -13,7 +13,8 @@
     "build": "next build",
     "test": "jest",
     "deploy": "npm run build && xdn deploy",
-    "prettier": "prettier --write \"**/*.js\" \"!{node_modules,.next,.yalc}/**\""
+    "prettier": "prettier --write \"**/*.js\" \"!{node_modules,.next,.yalc}/**\"",
+      "heroku-postbuild": "npm run build"
   },
   "husky": {
     "hooks": {

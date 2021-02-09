@@ -16,7 +16,7 @@ const Home = () => {
             <Endof/>
             <Collection></Collection>
             <Whathapen/>
-            <Footer/>
+            
         </div>
     )
 }
